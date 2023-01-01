@@ -1,0 +1,436 @@
+/* =====
+    Template name: Paul
+    Template URI: https://moshiur.dev/projects/paul-lapkin/
+    Author: Moshiur
+    Author URI: https://moshiur.me/
+    Version: 1.0
+    Description: A simple portfolio template.
+=====*/
+
+/* Common CSS */
+
+* {
+   margin: 0;
+   padding: 0; 
+   box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #000;
+    background-color: #fff;
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    margin: 0;
+}
+.cleafix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+/* Reusable Components */
+.container {
+    max-width: 118rem;
+    margin: auto;
+}
+section {
+    padding: 12rem 0;
+}
+.btn {
+    background: transparent;
+    color: #fff;
+    width: 20rem;
+    display: inline-block;
+    padding: 1.5rem 0;
+    text-align: center;
+    text-transform: capitalize;
+    border: 0.2rem solid transparent;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+.section-title h2{
+    font-size: 4rem;
+    color: #000;
+    margin-bottom: 2rem;
+}
+/* HERO */
+#hero {
+    height: 100vh;
+    background: rgba(0,0,0,0.7) url('./img/hero.jpg') no-repeat center / cover;
+    background-blend-mode: overlay;
+    position: relative;
+}
+nav {
+   padding: 4.5rem 0;
+}
+nav.uk-sticky-fixed {
+    position: fixed!important;
+    top: 0!important;
+    background: rgba(0,0,0,0.9);
+    padding: 1rem 0;
+}
+/* HAMBURGER MENU */
+
+.menu-container {
+    width: 0;
+    height: 100vh;
+    background: rgba(0,0,0,0.95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 9999;
+}
+.close-btn a ion-icon {
+    color: #fff;
+    font-size: 4rem;
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+}
+.menu-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.menu-item li a {
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin: 1.5rem 0;
+    display: inline-block;
+}
+.logo {
+    float: left;
+}
+.menu {
+    float: right;
+}
+.menu a ion-icon {
+    color: #fff;
+    font-size: 4rem;
+    border: 0.1rem solid #fff;
+}
+.hero-content-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+.hero-content-box h1 {
+    font-size: 6.5rem;
+    text-transform: uppercase;
+    color: #fff;
+    border-top: 0.2rem solid #fff;
+    border-bottom: 0.2rem solid #fff;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+.hero-content-box span {
+    font-size: 2rem;
+    color: #fff;
+    display: block;
+}
+.next-section a {
+    position: absolute;
+    bottom: 4.5rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 4.5rem;
+    color: #fff;
+    text-align: center;
+    z-index: 999;
+}
+.next-section a ion-icon {
+    position: relative;
+    animation: arrow 2s ease-in infinite;
+}
+/* CANVAS */
+canvas.particles-js-canvas-el {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* ANIMATION */
+@keyframes arrow {
+    0% {
+        top: 1rem;
+    }
+    50% {
+        top: 3rem;
+    }
+    100% {  
+        top: 1rem;
+    }
+}
+/* ABOUT SECTION */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+}
+.about-grid-item img {
+    width: 100%;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+.about-grid-item h3 {
+    font-size: 2rem;
+    color: #000;
+}
+
+.about-content {
+    margin: 4rem 0;
+}
+.btn-full {
+    background: #ff2b4a;
+    color: #fff;
+    border-color: #ff2b4a;
+    transition: all 0.1s;
+}
+
+.btn-full:hover {
+    background: transparent;
+    color: #ff2b4a;
+    text-decoration: none;
+}
+
+/* PROCESS */
+#process {
+    background: #f6f6f6;
+}
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+.process-grid-item {
+    background: #000;
+    text-align: center;
+    padding: 8rem;
+
+}
+.icon ion-icon {
+    color: #fff;
+    font-size: 4.5rem;
+    margin-bottom: 4rem;
+}
+.process-grid-item h4{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+.process-grid-item:nth-child(1) {
+    background-color: #10c6fc;
+}
+.process-grid-item:nth-child(2) {
+    background-color: #835aeb;
+}
+.process-grid-item:nth-child(3) {
+    background-color: #002453;
+}
+.process-grid-item:nth-child(4) {
+    background-color: #ff2b4a;
+}
+/* EXPERIENCE */
+#exp {
+    background: url(./img/experience.jpg) no-repeat center / cover fixed;
+}
+.exp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+.exp-grid-item {
+    background: rgba(0,0,0,0.7);
+    padding: 3rem;
+    color: #fff;
+}
+.exp-grid-item h3 {
+    color: #fff;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
+.exp-grid-item h4 {
+    color: #fff;
+    font-size: 1.5rem;
+}
+.exp-grid-item span {
+    margin: 1.5rem 0;
+    display: inline-block;
+}
+hr {
+    border: 0;
+    border: .1rem solid #fff;
+    margin: 3rem 0;
+}
+/* WORK */
+.work-filter {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.work-filter button {
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+    border: 0;
+    margin: .5rem 0;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.work-grid-item {
+    height: 25rem;
+}
+
+.work-grid-item:nth-child(5) {
+    grid-column: 1/3;
+}
+
+.work-grid-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.work-filter button.mixitup-control-active {
+    background: #ff2b4a;
+}
+
+.uk-lightbox {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* TESTIMONIAL */
+#tm {
+    background: url(./img/testimonial.jpg) no-repeat center top/cover;
+}
+.tm-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.quote {
+    width: 4rem;
+}
+.tm-grid-item p {
+   margin: 4rem 0; 
+} 
+.signature {
+    width: 12rem;
+}
+.tm-grid-item h4 {
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
+}
+.testimonial {
+    display: none;
+}
+
+/* CONTACT */
+#contact {
+    background: url(./img/contact.jpg) no-repeat center / cover fixed;
+}
+.ct-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+.ct-grid-item:nth-child(1),
+.nested-ct-grid-item {
+    background-color: rgba(0,0,0,0.9);
+    padding: 3rem;
+}
+.ct-grid-item h3{
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    border: .1rem solid #fff;
+    font-size: 1.6rem;
+    color: #fff;
+    padding: 1rem;
+    background: transparent;
+    margin: 1rem 0;
+}
+form textarea {
+    font-family: 'Roboto', sans-serif;
+    height: 20rem;
+}
+.form-cta-btn {
+    text-align: right;
+}
+.nested-ct-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    color: #fff;
+}
+/* FOOTER */
+footer {
+    padding: 3rem 0;
+    text-align: center;
+    background-color: #222222;
+    color: #fff;
+}
+.social-list li {
+    list-style-type: none;
+    display: inline-block;
+}
+.social-list li a ion-icon {
+    font-size: 2.5rem;
+    color: #fff;
+    border-right: .1rem solid #fff;
+    padding: 0 1rem;
+}
+.social-list li:last-child a ion-icon {
+    border-right: 0;
+}
+.copyright {
+    margin: 1.5rem 0;
+    font-size: 1.4rem;
+}
+.totop a {
+    border: .1rem solid #fff;
+    padding: .5rem;
+    color: #fff;
+    text-decoration: none;
+}
